@@ -1,0 +1,30 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDoApp.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Colores de la paleta -->
+            <Color x:Key="ColorBeige">#FOEDE5</Color>
+            <Color x:Key="ColorNavy">#1F3345</Color>
+            <Color x:Key="ColorSeaGreen">#85ABAB</Color>
+            <Color x:Key="ColorRed">#B54745</Color>
+            <Color x:Key="ColorGold">#C7B557</Color>
+            <Color x:Key="ColorBlack">#000000</Color>
+
+            <!-- Estilo de botones -->
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource ColorGold}" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="Padding" Value="10,5" />
+            </Style>
+
+            <!-- Estilo de etiquetas -->
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="TextColor" Value="{StaticResource ColorBlack}" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

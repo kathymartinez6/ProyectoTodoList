@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MainPage.xaml"
+             BackgroundColor="{StaticResource ColorBeige}"
+             Title="To-Do List">
+    <Grid RowDefinitions="Auto,*" Padding="10">
+        <!-- Encabezado -->
+        <Label Text="¡Hola! Estas son tus tareas:"
+               FontSize="24"
+               TextColor="{StaticResource ColorNavy}"
+               HorizontalOptions="Start"
+               Margin="0,10,0,20" />
+
+        <!-- Lista de tareas -->
+        <CollectionView Grid.Row="1" ItemsSource="{Binding Tasks}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="{StaticResource ColorSeaGreen}"
+                           CornerRadius="10"
+                           Padding="10"
+                           Margin="5">
+                        <Grid>
+                            <Label Text="{Binding Title}"
+                                   FontSize="18"
+                                   TextColor="{StaticResource ColorBlack}" />
+                            <Label Text="{Binding Status}"
+                                   FontSize="14"
+                                   HorizontalOptions="End"
+                                   TextColor="{StaticResource ColorGold}" />
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Botón flotante para agregar tareas -->
+        <Button Text="+"
+                FontSize="24"
+                WidthRequest="60"
+                HeightRequest="60"
+                CornerRadius="30"
+                BackgroundColor="{StaticResource ColorRed}"
+                TextColor="White"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                Margin="10"
+                Clicked="OnAddTaskClicked" />
+    </Grid>
+</ContentPage>
